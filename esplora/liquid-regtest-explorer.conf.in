@@ -1,0 +1,10 @@
+chain=elementsregtest
+server=1
+validatepegin=0
+blocknotify=pkill -USR1 electrs
+[elementsregtest]
+connect=elementsd
+#initialfreecoins=2100000000000000
+rpcport=7041
+
+

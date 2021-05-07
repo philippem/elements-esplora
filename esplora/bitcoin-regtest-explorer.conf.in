@@ -1,0 +1,6 @@
+regtest=1
+[regtest]
+connect=bitcoind
+server=1
+listen=0
+blocknotify=pkill -USR1 electrs
