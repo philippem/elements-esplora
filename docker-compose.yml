@@ -4,27 +4,28 @@ services:
   bitcoind:
     build: ./bitcoind
     volumes:
-      - bitcoind-data:/root/.bitcoin/regtest
+      - bitcoind-data:/root/.bitcoin/
     ports:
       - "18888:18888"
     networks:
       elements-net:
-        ipv4_address: 172.16.238.10
+        ipv4_address: 172.16.231.10
 
   elementsd:
     build: ./elementsd
     volumes:
-      - elementsd-data:/root/.elements/elementsregtest
+      - elementsd-data:/root/.elements/
     ports:
       - "18884:18884"
     networks:
       elements-net:
-        ipv4_address: 172.16.238.11
+        ipv4_address: 172.16.231.11
 
   bitcoin-esplora:
     build: ./esplora
     environment:
       - "DEBUG=VERBOSE"
+      - "NO_REGTEST_MINING=1"      
     volumes:
       - bitcoin-esplora-data:/data
     command:
@@ -34,14 +35,15 @@ services:
       - "8094:80"      
     networks:
       elements-net:
-        ipv4_address: 172.16.238.12
+        ipv4_address: 172.16.231.12
 
-  liquid-esplora:
+  elements-esplora:
     build: ./esplora
     environment:
-      - "DEBUG=VERBOSE"    
+      - "DEBUG=VERBOSE"
+      - "NO_REGTEST_MINING=1"
     volumes:
-      - liquid-esplora-data:/data
+      - elements-esplora-data:/data
     command:
       - liquid-regtest
       - explorer
@@ -49,16 +51,16 @@ services:
       - "8092:80"      
     networks:
       elements-net:
-        ipv4_address: 172.16.238.13
+        ipv4_address: 172.16.231.13
         
 volumes:
   bitcoind-data:
   elementsd-data:
   bitcoin-esplora-data:
-  liquid-esplora-data:
+  elements-esplora-data:
     
 networks:
   elements-net:
     ipam:
      config:
-       - subnet: 172.16.238.0/24
+       - subnet: 172.16.231.0/24
