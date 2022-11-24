@@ -7,9 +7,6 @@ RUN apt-get -yqq update \
 COPY wait-for-it.sh /usr/local/bin/wait-for-it.sh
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-COPY run.sh /srv/explorer/source/run.sh
-COPY run.sh /srv/explorer/run.sh
-
 COPY bitcoin-regtest-explorer.conf.in /srv/explorer/source/contrib/
 COPY liquid-regtest-explorer.conf.in /srv/explorer/source/contrib/
 

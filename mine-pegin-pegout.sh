@@ -1,9 +1,12 @@
 #!/bin/bash
 
 set -x
+set -e
 
 BITCOIN=elements-esplora_bitcoind_1
 ELEMENTS=elements-esplora_elementsd_1
+
+docker exec $BITCOIN bitcoin-cli createwallet default || true
 
 # mining address
 maddress="mzPAtusyp21ijfmH711dS8BdeDRHK1WkNk"
@@ -23,6 +26,8 @@ caddress="mgjBC4ADH7mcCRh2XZf3fnniGKoB7miGri"
 cprivkey="cPLCFcRWdEvmoYGxN9J2xsSV3P1AUwJiwQ5rqGeNRRS5JFxVqy9T"
 docker exec $BITCOIN bitcoin-cli importaddress $caddress
 docker exec $BITCOIN bitcoin-cli importprivkey $cprivkey
+
+docker exec $ELEMENTS elements-cli createwallet default || true
 
 # also fee address
 laddr="Azpsj42AcbjqBRP7NCEHPXrBoQgB3imZAkmh12SfSyQNDHXsbHwJtsrsRd92wjp6W42jDWMKqefKThhk"

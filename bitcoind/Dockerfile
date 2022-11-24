@@ -1,4 +1,4 @@
-FROM blockstream/bitcoind:v0.19.1
+FROM blockstream/bitcoind:22.0
 
 RUN mkdir -p /root/.bitcoin/regtest
 
