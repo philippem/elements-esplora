@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-wait-for-it.sh bitcoind:18888 -t 0
-wait-for-it.sh elementsd:18884 -t 0
+# bitcoind
+wait-for-it.sh 172.16.231.10:18445 -t 0
+# elementsd
+wait-for-it.sh 172.16.231.11:18443 -t 0
 
 exec /srv/explorer/run.sh $@

@@ -6,7 +6,7 @@ services:
     volumes:
       - bitcoind-data:/root/.bitcoin/
     ports:
-      - "18888:18888"
+      - "18445:18445"
     networks:
       elements-net:
         ipv4_address: 172.16.231.10
@@ -16,7 +16,7 @@ services:
     volumes:
       - elementsd-data:/root/.elements/
     ports:
-      - "18884:18884"
+      - "18443:18443"
     networks:
       elements-net:
         ipv4_address: 172.16.231.11
