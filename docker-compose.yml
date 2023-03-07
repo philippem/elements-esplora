@@ -52,12 +52,24 @@ services:
     networks:
       elements-net:
         ipv4_address: 172.16.231.13
+
+  elementsd-1:
+    build: ./elementsd-1
+    volumes:
+      - elementsd-1-data:/root/.elements/
+    ports:
+      - "18446:18443"
+    networks:
+      elements-net:
+        ipv4_address: 172.16.231.14
+        
         
 volumes:
   bitcoind-data:
   elementsd-data:
   bitcoin-esplora-data:
   elements-esplora-data:
+  elementsd-1-data:    
     
 networks:
   elements-net:
