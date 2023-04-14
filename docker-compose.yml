@@ -17,6 +17,7 @@ services:
       - elementsd-data:/root/.elements/
     ports:
       - "18443:18443"
+      - "18544:18444"
     networks:
       elements-net:
         ipv4_address: 172.16.231.11
