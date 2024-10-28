@@ -1,9 +1,10 @@
-chain=liquidregtest
+chain=elementsregtest
 server=1
 validatepegin=0
 blocknotify=pkill -USR1 electrs
-[liquidregtest]
-connect=172.16.231.11
-falllbackfee=0.000001
+[elementsregtest]
+connect=127.0.0.1:18886
+falllbackfee=0.000002
+con_max_block_sig_size=2000
 
 
