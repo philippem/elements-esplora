@@ -4,7 +4,7 @@ validatepegin=0
 blocknotify=pkill -USR1 electrs
 [liquidregtest]
 # PUT YOUR IP OF HOST HERE
-connect=10.10.37.66:18886
+connect=10.152.176.171:18886
 #falllbackfee=0.000001
 
 
