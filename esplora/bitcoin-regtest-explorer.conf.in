@@ -1,6 +1,7 @@
 regtest=1
 [regtest]
-connect=172.16.231.10
+# PUT YOUR IP HERE
+connect=10.10.37.66
 server=1
 listen=1
 mempoolfullrbf=1
